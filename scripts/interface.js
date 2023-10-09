@@ -12,21 +12,21 @@ function handleClick(event) {
 
 
     let square = event.target;
-    let postion = square.id;
+    let position = square.id;
 
-    if (handleMove(postion)) {
+    if (handleMove(position)) {
 
         setTimeout(() => {
             alert(" O jogo acabou! - O vencedor foi " + playerTime);
         }, 10);
 
     };
-    updateSquare(postion);
+    updateSquare(position);
 }
 
-function updateSquare(postion) {
-    let square = document.getElementById(postion.toString());
-    let symbol = board[postion];
+function updateSquare(position) {
+    let square = document.getElementById(position.toString());
+    let symbol = board[position];
     square.innerHTML = `<div class='${symbol}'></div>`
 }
 
@@ -35,8 +35,8 @@ function updateSquares() {
     let squares = document.querySelectorAll(".square");
 
     squares.forEach((square) => {
-        let postion = square.id;
-        let symbol = board[postion];
+        let position = square.id;
+        let symbol = board[position];
 
         if (symbol != '') {
             square.innerHTML = `<div class='${symbol}'></div>`
